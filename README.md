@@ -24,6 +24,6 @@ The response will be the processed output whenever the status code is 200.
 
 
 ## Production Mode
-```python main.py cmd <output>```
+```python main.py prod```
 
 For now it is using hardcoded addresses, according to the ```orwell-core```'s docker-compose.
