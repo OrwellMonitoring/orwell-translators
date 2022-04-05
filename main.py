@@ -114,7 +114,7 @@ def main ():
     print("Run mode not recognised!\nUsage: python " + __file__ + " <run_mode> [OPTIONS]\nAvailable modes: " + ", ".join(RUN_MODES), file=stderr)
 
   elif argv[1] == CMD_TEXT:
-    print(concatenate_metrics(translate(argv[2])))
+    print(concatenate_metrics([translate(a) for a in argv[2].split('\\n')]))
 
   elif argv[1] == SERVER_TEXT:
     serve(translate, debug=True)
