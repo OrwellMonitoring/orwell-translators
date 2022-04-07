@@ -26,4 +26,15 @@ The response will be the processed output whenever the status code is 200.
 ## Production Mode
 ```python main.py cmd <output>```
 
-For now it is using hardcoded addresses, according to the ```orwell-core```'s docker-compose.
+### Environment Variables
+```REDIS_PASSWORD```
+**Default** "root"
+
+```KAFKA_HOST```
+**Default** "localhost""
+
+```KAFKA_PORT```
+**Default** 9092
+
+```KAFKA_TOPIC```
+**Default** "telegraf"
