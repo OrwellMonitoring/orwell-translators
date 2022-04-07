@@ -4,6 +4,7 @@ from redis import Redis
 
 from time import time
 from sys import argv, stderr
+from os import environ
 
 
 TIMESTAMP_LENGTH = 13
@@ -74,8 +75,13 @@ def serve (translation_function: callable, host="localhost", debug=False, port=5
 
 
 def prod (translation_function: callable):
+  redis_password = environ.get('REDIS_PASSWORD', 'root')
+  kafka_host = environ.get('KAFKA_HOST', 'localhost')
+  kafka_port = environ.get('KAFKA_PORT', 9092)
+  kafka_topic = environ.get('KAFKA_TOPIC', 'telegraf')
+
   def consume (metrics: list[Metric]):
-    conn = Redis(password="root")
+    conn = Redis(password=redis_password)
     pipe = conn.pipeline()
 
     for metric in metrics: pipe.set(metric.title, metric.value)
@@ -83,7 +89,7 @@ def prod (translation_function: callable):
     pipe.execute()
     conn.close()
 
-  consumer = KafkaConsumer('telegraf', bootstrap_servers=[ 'localhost:9092' ], value_deserializer=lambda m: list(map(translation_function, m.decode('ascii').split('\n'))))
+  consumer = KafkaConsumer(kafka_topic, bootstrap_servers=[ '%s:%i' % (kafka_host, kafka_port) ], value_deserializer=lambda m: list(map(translation_function, m.decode('ascii').split('\n'))) if m else [])
   
   for msg in consumer: 
     for batch in msg.value: 
