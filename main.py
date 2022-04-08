@@ -78,9 +78,9 @@ def prod (translation_function: callable):
   redis_password = environ.get('REDIS_PASSWORD', 'root')
   kafka_host = environ.get('KAFKA_HOST', '10.0.12.82')
   kafka_port = environ.get('KAFKA_PORT', 9093)
-  kafka_topic = environ.get('KAFKA_TOPIC', 'telegraf')
+  kafka_topic = environ.get('KAFKA_TOPIC', 'teste_telegraf')
 
-  def consume (metrics: list[Metric]):
+  def consume (metrics):
     conn = Redis(password=redis_password)
     pipe = conn.pipeline()
 
@@ -88,14 +88,14 @@ def prod (translation_function: callable):
 
     pipe.execute()
     conn.close()
-  consumer = KafkaConsumer(kafka_topic, bootstrap_servers=[ '%s:%i' % (kafka_host, kafka_port) ],auto_offset_reset="earliest", value_deserializer=lambda m: list(map(translation_function, m.decode('ascii').split('\n'))) if m else [])
-  
+
+  consumer = KafkaConsumer(kafka_topic, bootstrap_servers=[ '%s:%s' % (kafka_host, kafka_port) ], auto_offset_reset="earliest", value_deserializer=lambda m: list(map(translation_function, m.decode('ascii').split('\n')[:1])) if m.decode('ascii').strip() else [])
   for msg in consumer: 
     for batch in msg.value: 
       consume(batch)
 
 
-def translate (line: str) :
+def translate (line: str):
   properties, metrics, ts = line.split(" ")
 
   properties = properties.split(",")
@@ -103,7 +103,7 @@ def translate (line: str) :
   properties = { prop: value for prop, value in [prop.split('=') for prop in properties[1:]] }
 
   metrics = [metric.split('=') for metric in metrics.split(',')]
-  print("consumi")
+
   return [ Metric(title + '_' + metric, value, properties, ts) for metric, value in metrics ]
 
 
