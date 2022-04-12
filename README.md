@@ -31,7 +31,7 @@ The response will be the processed output whenever the status code is 200.
 **Default** "root"
 
 ```KAFKA_HOST```
-**Default** "localhost""
+**Default** "localhost"
 
 ```KAFKA_PORT```
 **Default** 9092
