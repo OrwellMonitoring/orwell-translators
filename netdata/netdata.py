@@ -32,6 +32,7 @@ class PullNetData(Runner):
             self.consume(str(metric))
 
 
+
     def run (self):
         #super.run() 
         if argv[1] == "pull":
@@ -70,6 +71,9 @@ class PullNetData(Runner):
             metrics_lst.append(Metric(title, value, properties, ts))
             
         return metrics_lst
+
+
+        
 
 if __name__ == '__main__':
     x = PullNetData(any)

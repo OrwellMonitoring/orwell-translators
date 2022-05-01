@@ -20,6 +20,7 @@ def translate (line: str) -> list:
         properties=dict()
     title=array[0]
     return Metric(title, value, properties, ts)
+
 translator = Runner(translate)
 translator.run()
 
