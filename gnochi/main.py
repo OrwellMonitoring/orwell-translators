@@ -1,14 +1,15 @@
-from orwell import Metric, Runner
-import sys
-from telegraf.test import MetricsFactory
+from orwell import Metric, Runner,MetricsFactory
+import json
 
 def translate (dic: dict) -> list:
+    dic = json.loads(dic)
+    print(type(dic))
     metrics_lst=[]
     dic["memory_free"]=[ dic["memory.usage"][0],dic["memory.usage"][1],
      dic["memory"][2]- dic["memory.usage"][2] ]
     dic.pop("memory.usage")
     for key,value in dic.items():
-        data = create_metric(key, value[2], dict(),  str(int(value[0])))
+        data = create_metric(key, value[2], {"instance": dic["instance"]},  str(int(value[0])))
         metrics_lst.append(data)
     return metrics_lst
 def create_metric (title: str, value: str, properties: dict, ts: str) -> Metric:
