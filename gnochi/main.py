@@ -1,6 +1,5 @@
-from orwell import Metric, Runner
+from orwell import Metric, Runner, MetricsFactory
 import sys
-from telegraf.test import MetricsFactory
 
 def translate (dic: dict) -> list:
     metrics_lst=[]

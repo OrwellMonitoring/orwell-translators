@@ -1,0 +1,22 @@
+version: "3.0"
+services:
+  gnochi:
+    build: "./gnochi"
+    environment:
+      KAFKA_TOPIC: "gnochi"
+  netdata:
+    build: "./netdata"
+    environment:
+      KAFKA_TOPIC: "netdata"
+  prometheus:
+    build: "./node_exporter"
+    environment:
+      KAFKA_TOPIC: "prometheus"
+    restart: always
+  telegraf:
+    build: "./telegraf"
+    environment:
+      KAFKA_TOPIC: "telegraf"
+      
+       
+
