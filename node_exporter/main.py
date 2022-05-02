@@ -5,7 +5,7 @@
 # Date: 02-05-2022
 
 # Description:
-# Prometheus node exporter metrics fetch and send to kafka
+# Prometheus' metrics reader and sender to redis
 
 from orwell import Metric, Runner
 import json
