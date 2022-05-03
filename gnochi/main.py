@@ -20,7 +20,8 @@ def translate (dic: dict) -> list:
       metrics_lst.append(MetricsFactory.create_memory_available_metric(dic["memory_free"][2],dic["memory_free"][0],dic['instance']))
     
     if "disk.root.size" in dic.keys():
-      metrics_lst.append(MetricsFactory.create_filesystem_size_metric("","","/",int(dic["disk.root.size"][2])*1024**3,dic["disk.root.size"][0],dic['instance']))
+      tmp=int(dic["disk.root.size"][2])*1024**3
+      metrics_lst.append(MetricsFactory.create_filesystem_size_metric("","","/",str(tmp),dic["disk.root.size"][0],dic['instance']))
     return metrics_lst
 
 
