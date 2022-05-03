@@ -1,22 +1,31 @@
 version: "3.0"
 services:
-  gnochi:
+  gnocchi:
     build: "./gnochi"
     environment:
-      KAFKA_TOPIC: "gnochi"
+      KAFKA_TOPIC: "gnocchi"
+      KAFKA_HOST: "10.0.12.82"
+      REDIS_HOST: "10.0.12.82"
   netdata:
     build: "./netdata"
     environment:
       KAFKA_TOPIC: "netdata"
+      KAFKA_HOST: "10.0.12.82"
+      REDIS_HOST: "10.0.12.82"
   prometheus:
     build: "./node_exporter"
     environment:
       KAFKA_TOPIC: "prometheus"
+      KAFKA_HOST: "10.0.12.82"
+      REDIS_HOST: "10.0.12.82"
     restart: always
   telegraf:
     build: "./telegraf"
     environment:
       KAFKA_TOPIC: "telegraf"
+      KAFKA_HOST: "10.0.12.82"
+      REDIS_HOST: "10.0.12.82"
+  
       
        
 
