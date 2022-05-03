@@ -1,3 +1,12 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+#
+# Authors: Alexandre Serras (alexandreserras@ua.pt), Gonçalo Leal (goncalolealsilva@ua.pt)
+# Date: 02-05-2022
+
+# Description:
+# Prometheus' metrics reader and sender to redis
+
 from orwell import Metric, Runner
 import json
 

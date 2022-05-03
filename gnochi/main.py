@@ -1,7 +1,7 @@
 from orwell import Metric, Runner, MetricsFactory
 import json
 
-
+import sys
 
 def translate (dic: dict) -> list:
     dic = json.loads(dic)

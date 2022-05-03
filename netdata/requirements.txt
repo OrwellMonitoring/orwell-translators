@@ -1,0 +1,3 @@
+orwell-translators
+redis
+requests
