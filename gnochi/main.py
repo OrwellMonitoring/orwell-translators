@@ -4,16 +4,18 @@ import json
 def translate (dic: dict) -> list:
     dic = json.loads(dic)
     metrics_lst=[]
-    dic["memory_free"]=[ dic["memory.usage"][0],dic["memory.usage"][1],
-     dic["memory"][2]- dic["memory.usage"][2] ]
-    dic.pop("memory.usage")
+    print(dic)
+    if "memory.usage" in dic.keys():
+      dic["memory_free"]=[ dic["memory.usage"][0],dic["memory.usage"][1],
+      dic["memory"][2]- dic["memory.usage"][2] ]
+      dic.pop("memory.usage")
     properties= dict()
     properties["instance"]=dic["instance"]
     dic.pop("instance")
-
     for key,value in dic.items():
-        data = create_metric(key, value[2], properties,  value[0])
+        data = Metric(key, value[2], properties,  value[0],properties["instance"])
         metrics_lst.append(data)
+    print(metrics_lst)
     return metrics_lst
 def create_metric (title: str, value: str, properties: dict, ts: str) -> Metric:
   
