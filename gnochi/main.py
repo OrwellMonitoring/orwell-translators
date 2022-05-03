@@ -17,11 +17,11 @@ def translate (dic: dict) -> list:
     if "memory.usage" in dic.keys():
       dic["memory_free"]=[ dic["memory.usage"][0],dic["memory.usage"][1],
       dic["memory"][2]- dic["memory.usage"][2] ]
-      metrics_lst.append(MetricsFactory.create_memory_available_metric(dic["memory_free"][2],dic["memory_free"][0],dic['instance']))
+      metrics_lst.append(MetricsFactory.create_memory_available_metric(str(dic["memory_free"][2]),dic["memory_free"][0],dic['instance']))
     
     if "disk.root.size" in dic.keys():
-      tmp=int(dic["disk.root.size"][2])*1024**3
-      metrics_lst.append(MetricsFactory.create_filesystem_size_metric("","","/",str(tmp),dic["disk.root.size"][0],dic['instance']))
+      #tmp=int(dic["disk.root.size"][2])*1024**3
+      metrics_lst.append(MetricsFactory.create_filesystem_size_metric("","","/",str(dic["disk.root.size"][2]*1024**3),dic["disk.root.size"][0],dic['instance']))
     return metrics_lst
 
 
