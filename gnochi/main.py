@@ -4,6 +4,7 @@ import json
 import sys
 
 def translate (dic: dict) -> list:
+    print(dic)
     dic = json.loads(dic)
     metrics_lst=[]
     print(dic["instance"])
