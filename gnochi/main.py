@@ -26,6 +26,6 @@ def translate (dic: dict) -> list:
       metrics_lst.append(MetricsFactory.create_filesystem_size_metric("vda1", "ext4","/",str(int(dic["disk.root.size"][2]*1024**3)),dic["disk.root.size"][0],dic['instance']))
     return metrics_lst
 
-
+print("VOU TRADUZIR")
 translator = Runner(translate)
 translator.run()
