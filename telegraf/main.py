@@ -1,6 +1,5 @@
 from orwell import Metric, Runner
 
-
 title_mappings = {
   'memory_total': 'node_memory_MemTotal_bytes',
   'memory_free': 'node_memory_MemFree_bytes',
@@ -38,9 +37,6 @@ def create_metric (title: str, value: str, properties: dict, ts: str) -> Metric:
     title = title_mappings[title]
     
   return Metric(title, value, properties, ts)
-
-
-
 
 translator = Runner(translate)
 translator.run()
