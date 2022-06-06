@@ -1,5 +1,4 @@
 import requests
-import warnings
 import json
 import math
 
