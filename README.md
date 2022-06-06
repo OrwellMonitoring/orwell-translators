@@ -38,3 +38,4 @@ The response will be the processed output whenever the status code is 200.
 
 ```KAFKA_TOPIC```
 **Default** "telegraf"
+
