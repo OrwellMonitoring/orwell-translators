@@ -1,6 +1,5 @@
 from orwell import Metric, Runner, MetricsFactory
 import json
-
 import sys
 
 def translate (dic: dict) -> list:
@@ -22,8 +21,8 @@ def translate (dic: dict) -> list:
     
     if "disk.root.size" in dic.keys():
       #tmp=int(dic["disk.root.size"][2])*1024**3      metrics_lst.append(MetricsFactory.create_filesystem_size_metric("vda1", "ext4","/",str(int(dic["disk.root.size"][2]*1024**3)),dic["disk.root.size"][0],dic['instance']))
-
       metrics_lst.append(MetricsFactory.create_filesystem_size_metric("vda1", "ext4","/",str(int(dic["disk.root.size"][2]*1024**3)),dic["disk.root.size"][0],dic['instance']))
+    
     return metrics_lst
 
 print("VOU TRADUZIR")
