@@ -28,7 +28,7 @@ services:
   esight_if:
     build: "./eSight_interfaces"
     environment:
-      KAFKA_TOPIC: "eSight_interface"
+      KAFKA_TOPIC: "esight_interface"
       KAFKA_HOST: "10.0.12.82"
       REDIS_HOST: "10.0.12.82"
   
