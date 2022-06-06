@@ -1,0 +1,410 @@
+{
+    "GigabitEthernet0/1/24": {
+        "sending_rate": {
+            "code": 0,
+            "data": {
+                "totalPage": 1,
+                "resultData": [
+                    {
+                        "dn": "NE=34603911",
+                        "neName": "AVEIRO_RN01_DCGW01",
+                        "thresholdList": [
+                            -1.0,
+                            -1.0,
+                            -1.0,
+                            -1.0
+                        ],
+                        "oper": "",
+                        "displayValueKey": "GigabitEthernet0/1/24",
+                        "displayValue": "GigabitEthernet0/1/24",
+                        "indexUnit": "Kbps",
+                        "indexName": "Interface sending rate",
+                        "indexId": 83,
+                        "indexValues": [
+                            {
+                                "timestamp": 1654504860000,
+                                "timestampStr": "2022-06-06 09:41:00 DST",
+                                "indexValue": "322.06",
+                                "breakpoint": false
+                            },
+                            {
+                                "timestamp": 1654504890000,
+                                "timestampStr": "2022-06-06 09:41:30 DST",
+                                "indexValue": "366.87",
+                                "breakpoint": false
+                            },
+                            {
+                                "timestamp": 1654504920000,
+                                "timestampStr": "2022-06-06 09:42:00 DST",
+                                "indexValue": "363.90",
+                                "breakpoint": false
+                            },
+                            {
+                                "timestamp": 1654504950000,
+                                "timestampStr": "2022-06-06 09:42:30 DST",
+                                "indexValue": "364.39",
+                                "breakpoint": false
+                            },
+                            {
+                                "timestamp": 1654504980000,
+                                "timestampStr": "2022-06-06 09:43:00 DST",
+                                "indexValue": "396.98",
+                                "breakpoint": false
+                            },
+                            {
+                                "timestamp": 1654505010000,
+                                "timestampStr": "2022-06-06 09:43:30 DST",
+                                "indexValue": "469.27",
+                                "breakpoint": false
+                            },
+                            {
+                                "timestamp": 1654505040000,
+                                "timestampStr": "2022-06-06 09:44:00 DST",
+                                "indexValue": "335.69",
+                                "breakpoint": false
+                            },
+                            {
+                                "timestamp": 1654505070000,
+                                "timestampStr": "2022-06-06 09:44:30 DST",
+                                "indexValue": "293.39",
+                                "breakpoint": false
+                            },
+                            {
+                                "timestamp": 1654505100000,
+                                "timestampStr": "2022-06-06 09:45:00 DST",
+                                "indexValue": "292.12",
+                                "breakpoint": false
+                            },
+                            {
+                                "timestamp": 1654505130000,
+                                "timestampStr": "2022-06-06 09:45:30 DST",
+                                "indexValue": "369.70",
+                                "breakpoint": false
+                            },
+                            {
+                                "timestamp": 1654505160000,
+                                "timestampStr": "2022-06-06 09:46:00 DST",
+                                "indexValue": "326.80",
+                                "breakpoint": false
+                            },
+                            {
+                                "timestamp": 1654505190000,
+                                "timestampStr": "2022-06-06 09:46:30 DST",
+                                "indexValue": "375.02",
+                                "breakpoint": false
+                            },
+                            {
+                                "timestamp": 1654505220000,
+                                "timestampStr": "2022-06-06 09:47:00 DST",
+                                "indexValue": "340.54",
+                                "breakpoint": false
+                            },
+                            {
+                                "timestamp": 1654505250000,
+                                "timestampStr": "2022-06-06 09:47:30 DST",
+                                "indexValue": "423.20",
+                                "breakpoint": false
+                            },
+                            {
+                                "timestamp": 1654505280000,
+                                "timestampStr": "2022-06-06 09:48:00 DST",
+                                "indexValue": "387.68",
+                                "breakpoint": false
+                            },
+                            {
+                                "timestamp": 1654505310000,
+                                "timestampStr": "2022-06-06 09:48:30 DST",
+                                "indexValue": "360.24",
+                                "breakpoint": false
+                            },
+                            {
+                                "timestamp": 1654505340000,
+                                "timestampStr": "2022-06-06 09:49:00 DST",
+                                "indexValue": "356.83",
+                                "breakpoint": false
+                            },
+                            {
+                                "timestamp": 1654505370000,
+                                "timestampStr": "2022-06-06 09:49:30 DST",
+                                "indexValue": "332.94",
+                                "breakpoint": false
+                            },
+                            {
+                                "timestamp": 1654505400000,
+                                "timestampStr": "2022-06-06 09:50:00 DST",
+                                "indexValue": "305.80",
+                                "breakpoint": false
+                            },
+                            {
+                                "timestamp": 1654505430000,
+                                "timestampStr": "2022-06-06 09:50:30 DST",
+                                "indexValue": "448.17",
+                                "breakpoint": false
+                            },
+                            {
+                                "timestamp": 1654505460000,
+                                "timestampStr": "2022-06-06 09:51:00 DST",
+                                "indexValue": "300.54",
+                                "breakpoint": false
+                            }
+                        ],
+                        "displayRate": 0,
+                        "indexGroup": "ifXTrafficStat",
+                        "indexKey": "ifHCOutOctetsSpeed",
+                        "resourceType": "interface"
+                    }
+                ],
+                "groupQueryData": null,
+                "startTime": 1654504838989,
+                "timeDisplayInfos": [
+                    {
+                        "timestamp": 1654504920000,
+                        "timestampStr": "06-06 09:42 DST"
+                    },
+                    {
+                        "timestamp": 1654505040000,
+                        "timestampStr": "06-06 09:44 DST"
+                    },
+                    {
+                        "timestamp": 1654505160000,
+                        "timestampStr": "06-06 09:46 DST"
+                    },
+                    {
+                        "timestamp": 1654505280000,
+                        "timestampStr": "06-06 09:48 DST"
+                    },
+                    {
+                        "timestamp": 1654505400000,
+                        "timestampStr": "06-06 09:50 DST"
+                    },
+                    {
+                        "timestamp": 1654505520000,
+                        "timestampStr": "06-06 09:52 DST"
+                    },
+                    {
+                        "timestamp": 1654505640000,
+                        "timestampStr": "06-06 09:54 DST"
+                    },
+                    {
+                        "timestamp": 1654505760000,
+                        "timestampStr": "06-06 09:56 DST"
+                    },
+                    {
+                        "timestamp": 1654505880000,
+                        "timestampStr": "06-06 09:58 DST"
+                    },
+                    {
+                        "timestamp": 1654506000000,
+                        "timestampStr": "06-06 10:00 DST"
+                    }
+                ],
+                "endTime": 1654506041959,
+                "yAxisScaleCount": 7
+            },
+            "description": null
+        },
+        "receiving_rate": {
+            "code": 0,
+            "data": {
+                "totalPage": 1,
+                "resultData": [
+                    {
+                        "dn": "NE=34603911",
+                        "neName": "AVEIRO_RN01_DCGW01",
+                        "thresholdList": [
+                            -1.0,
+                            -1.0,
+                            -1.0,
+                            -1.0
+                        ],
+                        "oper": "",
+                        "displayValueKey": "GigabitEthernet0/1/24",
+                        "displayValue": "GigabitEthernet0/1/24",
+                        "indexUnit": "Kbps",
+                        "indexName": "Interface receiving rate",
+                        "indexId": 80,
+                        "indexValues": [
+                            {
+                                "timestamp": 1654504860000,
+                                "timestampStr": "2022-06-06 09:41:00 DST",
+                                "indexValue": "508.45",
+                                "breakpoint": false
+                            },
+                            {
+                                "timestamp": 1654504890000,
+                                "timestampStr": "2022-06-06 09:41:30 DST",
+                                "indexValue": "568.60",
+                                "breakpoint": false
+                            },
+                            {
+                                "timestamp": 1654504920000,
+                                "timestampStr": "2022-06-06 09:42:00 DST",
+                                "indexValue": "604.13",
+                                "breakpoint": false
+                            },
+                            {
+                                "timestamp": 1654504950000,
+                                "timestampStr": "2022-06-06 09:42:30 DST",
+                                "indexValue": "563.20",
+                                "breakpoint": false
+                            },
+                            {
+                                "timestamp": 1654504980000,
+                                "timestampStr": "2022-06-06 09:43:00 DST",
+                                "indexValue": "578.92",
+                                "breakpoint": false
+                            },
+                            {
+                                "timestamp": 1654505010000,
+                                "timestampStr": "2022-06-06 09:43:30 DST",
+                                "indexValue": "554.70",
+                                "breakpoint": false
+                            },
+                            {
+                                "timestamp": 1654505040000,
+                                "timestampStr": "2022-06-06 09:44:00 DST",
+                                "indexValue": "586.11",
+                                "breakpoint": false
+                            },
+                            {
+                                "timestamp": 1654505070000,
+                                "timestampStr": "2022-06-06 09:44:30 DST",
+                                "indexValue": "508.69",
+                                "breakpoint": false
+                            },
+                            {
+                                "timestamp": 1654505100000,
+                                "timestampStr": "2022-06-06 09:45:00 DST",
+                                "indexValue": "516.57",
+                                "breakpoint": false
+                            },
+                            {
+                                "timestamp": 1654505130000,
+                                "timestampStr": "2022-06-06 09:45:30 DST",
+                                "indexValue": "545.14",
+                                "breakpoint": false
+                            },
+                            {
+                                "timestamp": 1654505160000,
+                                "timestampStr": "2022-06-06 09:46:00 DST",
+                                "indexValue": "549.78",
+                                "breakpoint": false
+                            },
+                            {
+                                "timestamp": 1654505190000,
+                                "timestampStr": "2022-06-06 09:46:30 DST",
+                                "indexValue": "596.10",
+                                "breakpoint": false
+                            },
+                            {
+                                "timestamp": 1654505220000,
+                                "timestampStr": "2022-06-06 09:47:00 DST",
+                                "indexValue": "564.21",
+                                "breakpoint": false
+                            },
+                            {
+                                "timestamp": 1654505250000,
+                                "timestampStr": "2022-06-06 09:47:30 DST",
+                                "indexValue": "622.29",
+                                "breakpoint": false
+                            },
+                            {
+                                "timestamp": 1654505280000,
+                                "timestampStr": "2022-06-06 09:48:00 DST",
+                                "indexValue": "654.91",
+                                "breakpoint": false
+                            },
+                            {
+                                "timestamp": 1654505310000,
+                                "timestampStr": "2022-06-06 09:48:30 DST",
+                                "indexValue": "576.91",
+                                "breakpoint": false
+                            },
+                            {
+                                "timestamp": 1654505340000,
+                                "timestampStr": "2022-06-06 09:49:00 DST",
+                                "indexValue": "600.23",
+                                "breakpoint": false
+                            },
+                            {
+                                "timestamp": 1654505370000,
+                                "timestampStr": "2022-06-06 09:49:30 DST",
+                                "indexValue": "552.73",
+                                "breakpoint": false
+                            },
+                            {
+                                "timestamp": 1654505400000,
+                                "timestampStr": "2022-06-06 09:50:00 DST",
+                                "indexValue": "546.28",
+                                "breakpoint": false
+                            },
+                            {
+                                "timestamp": 1654505430000,
+                                "timestampStr": "2022-06-06 09:50:30 DST",
+                                "indexValue": "602.85",
+                                "breakpoint": false
+                            },
+                            {
+                                "timestamp": 1654505460000,
+                                "timestampStr": "2022-06-06 09:51:00 DST",
+                                "indexValue": "543.52",
+                                "breakpoint": false
+                            }
+                        ],
+                        "displayRate": 0,
+                        "indexGroup": "ifXTrafficStat",
+                        "indexKey": "ifHCInOctetsSpeed",
+                        "resourceType": "interface"
+                    }
+                ],
+                "groupQueryData": null,
+                "startTime": 1654504838989,
+                "timeDisplayInfos": [
+                    {
+                        "timestamp": 1654504920000,
+                        "timestampStr": "06-06 09:42 DST"
+                    },
+                    {
+                        "timestamp": 1654505040000,
+                        "timestampStr": "06-06 09:44 DST"
+                    },
+                    {
+                        "timestamp": 1654505160000,
+                        "timestampStr": "06-06 09:46 DST"
+                    },
+                    {
+                        "timestamp": 1654505280000,
+                        "timestampStr": "06-06 09:48 DST"
+                    },
+                    {
+                        "timestamp": 1654505400000,
+                        "timestampStr": "06-06 09:50 DST"
+                    },
+                    {
+                        "timestamp": 1654505520000,
+                        "timestampStr": "06-06 09:52 DST"
+                    },
+                    {
+                        "timestamp": 1654505640000,
+                        "timestampStr": "06-06 09:54 DST"
+                    },
+                    {
+                        "timestamp": 1654505760000,
+                        "timestampStr": "06-06 09:56 DST"
+                    },
+                    {
+                        "timestamp": 1654505880000,
+                        "timestampStr": "06-06 09:58 DST"
+                    },
+                    {
+                        "timestamp": 1654506000000,
+                        "timestampStr": "06-06 10:00 DST"
+                    }
+                ],
+                "endTime": 1654506041959,
+                "yAxisScaleCount": 7
+            },
+            "description": null
+        }
+    }
+}
