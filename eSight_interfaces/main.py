@@ -18,7 +18,7 @@ def translate (line: str) -> list:
                 if send_index_units == "Mbps":
                     send_index_units="Kbps" 
                     values["indexValue"]=values["indexValue"]*1000
-                res.append(Metric(title+"_send_interface", str(values["indexValue"]), properties, str(values["timestamp"]),"perf"))
+                res.append(Metric(title+"_send_interface", str(values["indexValue"]), properties, str(int(time.time())),"perf"))
             receive_data=line[interface_name]["receiving_rate"]["data"]["resultData"][0]
             receive_interface_user_friendly_name=receive_data["neName"]
             receive_index_units= receive_data["indexUnit"]
@@ -27,7 +27,7 @@ def translate (line: str) -> list:
                 if receive_index_units == "Mbps":
                     receive_index_units="Kbps" 
                     values["indexValue"]=values["indexValue"]*1000
-                res.append(Metric(title+"_receive_interface", str(values["indexValue"]), properties, str(values["timestamp"]),"perf"))
+                res.append(Metric(title+"_receive_interface", str(values["indexValue"]), properties, str(int(time.time())),"perf"))
         except:
             print("NO DATA")
             continue
