@@ -13,6 +13,7 @@ import json
 def translate (line: str) -> list:
     line = json.loads(line)
     res = []
+    print(line)
     for l in line:
 
         if l.startswith("#"): continue

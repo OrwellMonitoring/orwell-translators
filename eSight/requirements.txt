@@ -1,0 +1,2 @@
+orwell-translators
+requests

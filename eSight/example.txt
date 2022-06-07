@@ -1,0 +1,142 @@
+{
+    "GigabitEthernet0/1/0": {
+        "sending_rate": {
+            "code": 0,
+            "data": {
+                "totalPage": 1,
+                "resultData": [
+                    {
+                        "dn": "NE=34603911",
+                        "neName": "AVEIRO_RN01_DCGW01",
+                        "thresholdList": [
+                            -1.0,
+                            -1.0,
+                            -1.0,
+                            -1.0
+                        ],
+                        "oper": "",
+                        "displayValueKey": "GigabitEthernet0/1/0",
+                        "displayValue": "GigabitEthernet0/1/0",
+                        "indexUnit": "Kbps",
+                        "indexName": "Interface sending rate",
+                        "indexId": 83,
+                        "indexValues": [
+                            {
+                                "timestamp": 1654596900000,
+                                "timestampStr": "2022-06-07 11:15:00 DST",
+                                "indexValue": "10.33",
+                                "breakpoint": false
+                            },
+                            {
+                                "timestamp": 1654597800000,
+                                "timestampStr": "2022-06-07 11:30:00 DST",
+                                "indexValue": "15.80",
+                                "breakpoint": false
+                            }
+                        ],
+                        "displayRate": 0,
+                        "indexGroup": "ifXTrafficStat",
+                        "indexKey": "ifHCOutOctetsSpeed",
+                        "resourceType": "interface"
+                    }
+                ],
+                "groupQueryData": null,
+                "startTime": 1654596884394,
+                "timeDisplayInfos": [
+                    {
+                        "timestamp": 1654596900000,
+                        "timestampStr": "06-07 11:15 DST"
+                    },
+                    {
+                        "timestamp": 1654597200000,
+                        "timestampStr": "06-07 11:20 DST"
+                    },
+                    {
+                        "timestamp": 1654597500000,
+                        "timestampStr": "06-07 11:25 DST"
+                    },
+                    {
+                        "timestamp": 1654597800000,
+                        "timestampStr": "06-07 11:30 DST"
+                    },
+                    {
+                        "timestamp": 1654598100000,
+                        "timestampStr": "06-07 11:35 DST"
+                    }
+                ],
+                "endTime": 1654598390652,
+                "yAxisScaleCount": 7
+            },
+            "description": null
+        },
+        "receiving_rate": {
+            "code": 0,
+            "data": {
+                "totalPage": 1,
+                "resultData": [
+                    {
+                        "dn": "NE=34603911",
+                        "neName": "AVEIRO_RN01_DCGW01",
+                        "thresholdList": [
+                            -1.0,
+                            -1.0,
+                            -1.0,
+                            -1.0
+                        ],
+                        "oper": "",
+                        "displayValueKey": "GigabitEthernet0/1/0",
+                        "displayValue": "GigabitEthernet0/1/0",
+                        "indexUnit": "Kbps",
+                        "indexName": "Interface receiving rate",
+                        "indexId": 80,
+                        "indexValues": [
+                            {
+                                "timestamp": 1654596900000,
+                                "timestampStr": "2022-06-07 11:15:00 DST",
+                                "indexValue": "60.58",
+                                "breakpoint": false
+                            },
+                            {
+                                "timestamp": 1654597800000,
+                                "timestampStr": "2022-06-07 11:30:00 DST",
+                                "indexValue": "57.18",
+                                "breakpoint": false
+                            }
+                        ],
+                        "displayRate": 0,
+                        "indexGroup": "ifXTrafficStat",
+                        "indexKey": "ifHCInOctetsSpeed",
+                        "resourceType": "interface"
+                    }
+                ],
+                "groupQueryData": null,
+                "startTime": 1654596884394,
+                "timeDisplayInfos": [
+                    {
+                        "timestamp": 1654596900000,
+                        "timestampStr": "06-07 11:15 DST"
+                    },
+                    {
+                        "timestamp": 1654597200000,
+                        "timestampStr": "06-07 11:20 DST"
+                    },
+                    {
+                        "timestamp": 1654597500000,
+                        "timestampStr": "06-07 11:25 DST"
+                    },
+                    {
+                        "timestamp": 1654597800000,
+                        "timestampStr": "06-07 11:30 DST"
+                    },
+                    {
+                        "timestamp": 1654598100000,
+                        "timestampStr": "06-07 11:35 DST"
+                    }
+                ],
+                "endTime": 1654598390652,
+                "yAxisScaleCount": 7
+            },
+            "description": null
+        }
+    }
+}
