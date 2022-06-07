@@ -31,6 +31,12 @@ services:
       KAFKA_TOPIC: "esight_interface"
       KAFKA_HOST: "10.0.12.82"
       REDIS_HOST: "10.0.12.82"
+  esight_slots:
+    build: "./eSight_routers"
+    environment:
+      KAFKA_TOPIC: "esight_slot"
+      KAFKA_HOST: "10.0.12.82"
+      REDIS_HOST: "10.0.12.82"
   
       
        
