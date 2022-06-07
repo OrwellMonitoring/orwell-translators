@@ -12,6 +12,7 @@ title_mappings = {
 }
 
 def translate (line: str) -> list:
+  print(line)
   if len(line.strip()) == 0: return []
   if line.startswith("> "): line = line[2:]
   properties, metrics, ts = line.split(" ")
