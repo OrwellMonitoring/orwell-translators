@@ -37,7 +37,11 @@ services:
       KAFKA_TOPIC: "esight_slot"
       KAFKA_HOST: "10.0.12.82"
       REDIS_HOST: "10.0.12.82"
-  
-      
-       
-
+  perfsonar:
+    build: 
+      context: ./perfsonar
+      dockerfile: ../Dockerfile
+    env_file:
+      - .env
+    environment:
+      KAFKA_TOPIC: "perf" 
