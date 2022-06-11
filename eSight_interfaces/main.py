@@ -2,6 +2,10 @@ from orwell import Metric, Runner
 import json
 import time
 import logging
+
+# we added this flag because we were having an error with Prometheus
+# change this flag if you want to keep the original timestamps
+change_timestamp = True
 def translate (line: str) -> list:
     line = json.loads(line)
     res = []
@@ -19,7 +23,11 @@ def translate (line: str) -> list:
                 if send_index_units == "Mbps":
                     send_index_units="Kbps" 
                     values["indexValue"]=values["indexValue"]*1000
-                res.append(Metric(title+"_send_interface", str(values["indexValue"]), properties, str(int(time.time())),"perf"))
+                if change_timestamp:
+                    time.sleep(2)
+                    res.append(Metric(title+"_send_interface", str(values["indexValue"]), properties, str(int(time.time())),"perf"))
+                else:
+                    res.append(Metric(title+"_send_interface", str(values["indexValue"]), properties, str(values["timestamp"]),"perf"))
             receive_data=line[interface_name]["receiving_rate"]["resultData"][0]
             receive_interface_user_friendly_name=receive_data["neName"]
             receive_index_units= receive_data["indexUnit"]
@@ -28,7 +36,12 @@ def translate (line: str) -> list:
                 if receive_index_units == "Mbps":
                     receive_index_units="Kbps" 
                     values["indexValue"]=values["indexValue"]*1000
-                res.append(Metric(title+"_receive_interface", str(values["indexValue"]), properties, str(int(time.time())),"perf"))
+                if change_timestamp:
+                    time.sleep(2)
+                    res.append(Metric(title+"_receive_interface", str(values["indexValue"]), properties, str(int(time.time())),"perf"))
+                else:
+                    res.append(Metric(title+"_receive_interface", str(values["indexValue"]), properties, str(values["timestamp"]),"perf"))
+
         except:
             logging.info("ERRO AO CRIAR MÉTRICAS")
             continue

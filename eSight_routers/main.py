@@ -1,6 +1,9 @@
 from orwell import Metric, Runner
 import json
 import time
+# we added this flag because we were having an error with Prometheus
+# change this flag if you want to keep the original timestamps
+change_timestamp = True
 def translate (line: str) -> list:
     line = json.loads(line)
     res = []
@@ -18,8 +21,11 @@ def translate (line: str) -> list:
                 cpu_display_key= cpu_usage["displayValueKey"]
                 properties={ "interface_name": interface_name, "units":cpu_units, "cpu_name":cpu_name,"cpu_display_key":cpu_display_key}
                 for values in cpu_usage["indexValues"]:
-                    res.append(Metric(title+"_cpu_usage", str(values["indexValue"]), properties, str(int(time.time())),"perf"))
-                    #res.append(Metric(title+"_send_interface", str(values["indexValue"]), properties, str(values["timestamp"]),"perf"))
+                    if change_timestamp:
+                        time.sleep(2)
+                        res.append(Metric(title+"_cpu_usage", str(values["indexValue"]), properties, str(int(time.time())),"perf"))
+                    else:
+                        res.append(Metric(title+"_send_interface", str(values["indexValue"]), properties, str(values["timestamp"]),"perf"))
             for x in line[interface_name]["mem_usage"]["resultData"]:
                 mem_usage=x
                 mem_name=mem_usage["indexName"]
@@ -27,8 +33,10 @@ def translate (line: str) -> list:
                 mem_display_key= mem_usage["displayValueKey"]
                 properties={ "interface_name": interface_name, "units":mem_units, "cpu_name":mem_name,"cpu_display_key":mem_display_key}
                 for values in mem_usage["indexValues"]:
-                    res.append(Metric(title+"_mem_usage", str(values["indexValue"]), properties, str(int(time.time())),"perf"))
-                    #res.append(Metric(title+"_send_interface", str(values["indexValue"]), properties, str(values["timestamp"]),"perf"))
+                    if change_timestamp:
+                        res.append(Metric(title+"_mem_usage", str(values["indexValue"]), properties, str(int(time.time())),"perf"))
+                    else:
+                        res.append(Metric(title+"_send_interface", str(values["indexValue"]), properties, str(values["timestamp"]),"perf"))
         except:
             print("NO DATA")
             continue
