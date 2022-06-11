@@ -45,6 +45,7 @@ def translate (line: str) -> list:
         except:
             logging.info("ERRO AO CRIAR MÉTRICAS")
             continue
+    logging.info("Métricas a serem enviadas")
     return res
 logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.INFO)
 translator = Runner(translate)
