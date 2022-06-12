@@ -14,7 +14,7 @@ def translate (line: str) -> list:
     for key in line.keys():
         interface_name = key
         #Data have all metrics now lets split them
-        for x in line[interface_name]["cpu_usage"]["resultData"]:
+        for x in line[interface_name]["cpu_usage"][0]["resultData"]:
         
             cpu_usage=x
             cpu_name=cpu_usage["neName"]
@@ -27,7 +27,7 @@ def translate (line: str) -> list:
                     res.append(Metric(title+"_cpu_usage", str(values["indexValue"]), properties, str(int(time.time())),"esight_slots"))
                 else:
                     res.append(Metric(title+"_send_interface", str(values["indexValue"]), properties, str(values["timestamp"]),"esight_slots"))
-        for x in line[interface_name]["mem_usage"]["resultData"]:
+        for x in line[interface_name]["mem_usage"][0]["resultData"]:
             mem_usage=x
             mem_name=mem_usage["neName"]
             mem_units= mem_usage["indexUnit"]
