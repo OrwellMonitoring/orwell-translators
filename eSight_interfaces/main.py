@@ -33,11 +33,12 @@ def translate (line: str) -> list:
                 if send_index_units == "Mbps":
                     # convert value from Mbps to Kbps
                     send_index_units = "Kbps" 
-                    values["indexValue"] = values["indexValue"] * 1000
+                    values["indexValue"] = float(values["indexValue"]) * 1000
 
                 if change_timestamp:
                     time.sleep(2)
                     res.append(Metric(title+"_send_interface", str(values["indexValue"]), properties, str(int(time.time())), "esight_if"))
+                    logging.info(str(res[-1]))
                 else:
                     res.append(Metric(title+"_send_interface", str(values["indexValue"]), properties, str(values["timestamp"]), "esight_if"))
         else:
@@ -59,7 +60,7 @@ def translate (line: str) -> list:
                 if receive_index_units == "Mbps":
                     # convert value from Mbps to Kbps
                     receive_index_units="Kbps" 
-                    values["indexValue"]=values["indexValue"] * 1000
+                    values["indexValue"]=float(values["indexValue"]) * 1000
 
                 if change_timestamp:
                     time.sleep(2)
