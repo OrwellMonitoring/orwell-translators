@@ -1,152 +1,166 @@
 {
-    "AVEIRO_RN01_DCGW02": {
-        "cpu_usage": {
-            "totalPage": 1,
-            "resultData": [
-                {
-                    "dn": "NE=34603915",
-                    "neName": "AVEIRO_RN01_DCGW02",
-                    "thresholdList": [
-                        -1.0,
-                        90.0,
-                        -1.0,
-                        -1.0
-                    ],
-                    "oper": ">",
-                    "displayValueKey": "Slot:IPU 1",
-                    "displayValue": "Slot:IPU 1",
-                    "indexUnit": "%",
-                    "indexName": "Slot CPU usage",
-                    "indexId": 108,
-                    "indexValues": [
-                        {
-                            "timestamp": 1654602300000,
-                            "timestampStr": "2022-06-07 12:45:00 DST",
-                            "indexValue": "5.00 ",
-                            "breakpoint": false
-                        }
-                    ],
-                    "displayRate": 0,
-                    "indexGroup": "CpuState",
-                    "indexKey": "cpuUsage",
-                    "resourceType": "slot"
-                }
-            ],
-            "groupQueryData": null,
-            "startTime": 1654601712874,
-            "timeDisplayInfos": [
-                {
-                    "timestamp": 1654602000000,
-                    "timestampStr": "06-07 12:40 DST"
-                },
-                {
-                    "timestamp": 1654602300000,
-                    "timestampStr": "06-07 12:45 DST"
-                },
-                {
-                    "timestamp": 1654602600000,
-                    "timestampStr": "06-07 12:50 DST"
-                },
-                {
-                    "timestamp": 1654602900000,
-                    "timestampStr": "06-07 12:55 DST"
-                },
-                {
-                    "timestamp": 1654603200000,
-                    "timestampStr": "06-07 13:00 DST"
-                }
-            ],
-            "endTime": 1654603214329,
-            "yAxisScaleCount": 7
-        },
-        "mem_usage": {
-            "totalPage": 1,
-            "resultData": [
-                {
-                    "dn": "NE=34603915",
-                    "neName": "AVEIRO_RN01_DCGW02",
-                    "thresholdList": [
-                        -1.0,
-                        90.0,
-                        -1.0,
-                        -1.0
-                    ],
-                    "oper": ">",
-                    "displayValueKey": "Slot:IPU 1",
-                    "displayValue": "Slot:IPU 1",
-                    "indexUnit": "%",
-                    "indexName": "Slot Memory usage",
-                    "indexId": 110,
-                    "indexValues": [
-                        {
-                            "timestamp": 1654602300000,
-                            "timestampStr": "2022-06-07 12:45:00 DST",
-                            "indexValue": "24.00 ",
-                            "breakpoint": false
-                        }
-                    ],
-                    "displayRate": 0,
-                    "indexGroup": "MemState",
-                    "indexKey": "memUsage",
-                    "resourceType": "slot"
-                }
-            ],
-            "groupQueryData": null,
-            "startTime": 1654601712874,
-            "timeDisplayInfos": [
-                {
-                    "timestamp": 1654602000000,
-                    "timestampStr": "06-07 12:40 DST"
-                },
-                {
-                    "timestamp": 1654602300000,
-                    "timestampStr": "06-07 12:45 DST"
-                },
-                {
-                    "timestamp": 1654602600000,
-                    "timestampStr": "06-07 12:50 DST"
-                },
-                {
-                    "timestamp": 1654602900000,
-                    "timestampStr": "06-07 12:55 DST"
-                },
-                {
-                    "timestamp": 1654603200000,
-                    "timestampStr": "06-07 13:00 DST"
-                }
-            ],
-            "endTime": 1654603214329,
-            "yAxisScaleCount": 7
-        },
-        "temperature": {
-            "totalPage": 0,
-            "resultData": [],
-            "groupQueryData": null,
-            "startTime": 1654601712874,
-            "timeDisplayInfos": [
-                {
-                    "timestamp": 1654602000000,
-                    "timestampStr": "06-07 12:40 DST"
-                },
-                {
-                    "timestamp": 1654602300000,
-                    "timestampStr": "06-07 12:45 DST"
-                },
-                {
-                    "timestamp": 1654602600000,
-                    "timestampStr": "06-07 12:50 DST"
-                },
-                {
-                    "timestamp": 1654602900000,
-                    "timestampStr": "06-07 12:55 DST"
-                },
-                {
-                    "timestamp": 1654603200000,
-                    "timestampStr": "06-07 13:00 DST"
-                }
-            ],
-            "endTime": 1654603214329,
-            "yAxisScaleCount": 7
-        }
+    "IPU 1": {
+        "cpu_usage": [
+            {
+                "totalPage": 1,
+                "resultData": [
+                    {
+                        "dn": "NE=34603915",
+                        "neName": "AVEIRO_RN01_DCGW02",
+                        "thresholdList": [
+                            -1.0,
+                            90.0,
+                            -1.0,
+                            -1.0
+                        ],
+                        "oper": ">",
+                        "displayValueKey": "Slot:IPU 1",
+                        "displayValue": "Slot:IPU 1",
+                        "indexUnit": "%",
+                        "indexName": "Slot CPU usage",
+                        "indexId": 108,
+                        "indexValues": [
+                            {
+                                "timestamp": 1654959600000,
+                                "timestampStr": "2022-06-11 16:00:00 DST",
+                                "indexValue": "5.00 ",
+                                "breakpoint": false
+                            }
+                        ],
+                        "displayRate": 0,
+                        "indexGroup": "CpuState",
+                        "indexKey": "cpuUsage",
+                        "resourceType": "slot"
+                    }
+                ],
+                "groupQueryData": null,
+                "startTime": 1654959091577,
+                "timeDisplayInfos": [
+                    {
+                        "timestamp": 1654959120000,
+                        "timestampStr": "06-11 15:52 DST"
+                    },
+                    {
+                        "timestamp": 1654959240000,
+                        "timestampStr": "06-11 15:54 DST"
+                    },
+                    {
+                        "timestamp": 1654959360000,
+                        "timestampStr": "06-11 15:56 DST"
+                    },
+                    {
+                        "timestamp": 1654959480000,
+                        "timestampStr": "06-11 15:58 DST"
+                    },
+                    {
+                        "timestamp": 1654959600000,
+                        "timestampStr": "06-11 16:00 DST"
+                    },
+                    {
+                        "timestamp": 1654959720000,
+                        "timestampStr": "06-11 16:02 DST"
+                    },
+                    {
+                        "timestamp": 1654959840000,
+                        "timestampStr": "06-11 16:04 DST"
+                    },
+                    {
+                        "timestamp": 1654959960000,
+                        "timestampStr": "06-11 16:06 DST"
+                    },
+                    {
+                        "timestamp": 1654960080000,
+                        "timestampStr": "06-11 16:08 DST"
+                    },
+                    {
+                        "timestamp": 1654960200000,
+                        "timestampStr": "06-11 16:10 DST"
+                    }
+                ],
+                "endTime": 1654960291773,
+                "yAxisScaleCount": 7
+            }
+        ],
+        "mem_usage": [
+            {
+                "totalPage": 1,
+                "resultData": [
+                    {
+                        "dn": "NE=34603915",
+                        "neName": "AVEIRO_RN01_DCGW02",
+                        "thresholdList": [
+                            -1.0,
+                            90.0,
+                            -1.0,
+                            -1.0
+                        ],
+                        "oper": ">",
+                        "displayValueKey": "Slot:IPU 1",
+                        "displayValue": "Slot:IPU 1",
+                        "indexUnit": "%",
+                        "indexName": "Slot Memory usage",
+                        "indexId": 110,
+                        "indexValues": [
+                            {
+                                "timestamp": 1654959600000,
+                                "timestampStr": "2022-06-11 16:00:00 DST",
+                                "indexValue": "24.00 ",
+                                "breakpoint": false
+                            }
+                        ],
+                        "displayRate": 0,
+                        "indexGroup": "MemState",
+                        "indexKey": "memUsage",
+                        "resourceType": "slot"
+                    }
+                ],
+                "groupQueryData": null,
+                "startTime": 1654959091577,
+                "timeDisplayInfos": [
+                    {
+                        "timestamp": 1654959120000,
+                        "timestampStr": "06-11 15:52 DST"
+                    },
+                    {
+                        "timestamp": 1654959240000,
+                        "timestampStr": "06-11 15:54 DST"
+                    },
+                    {
+                        "timestamp": 1654959360000,
+                        "timestampStr": "06-11 15:56 DST"
+                    },
+                    {
+                        "timestamp": 1654959480000,
+                        "timestampStr": "06-11 15:58 DST"
+                    },
+                    {
+                        "timestamp": 1654959600000,
+                        "timestampStr": "06-11 16:00 DST"
+                    },
+                    {
+                        "timestamp": 1654959720000,
+                        "timestampStr": "06-11 16:02 DST"
+                    },
+                    {
+                        "timestamp": 1654959840000,
+                        "timestampStr": "06-11 16:04 DST"
+                    },
+                    {
+                        "timestamp": 1654959960000,
+                        "timestampStr": "06-11 16:06 DST"
+                    },
+                    {
+                        "timestamp": 1654960080000,
+                        "timestampStr": "06-11 16:08 DST"
+                    },
+                    {
+                        "timestamp": 1654960200000,
+                        "timestampStr": "06-11 16:10 DST"
+                    }
+                ],
+                "endTime": 1654960291773,
+                "yAxisScaleCount": 7
+            }
+        ]
     }
 }
