@@ -37,9 +37,9 @@ def translate (line: str) -> list:
 
                 if change_timestamp:
                     time.sleep(2)
-                    res.append(Metric(title+"_send_interface", str(values["indexValue"]), properties, str(int(time.time())), "perf"))
+                    res.append(Metric(title+"_send_interface", str(values["indexValue"]), properties, str(int(time.time())), "esight_if"))
                 else:
-                    res.append(Metric(title+"_send_interface", str(values["indexValue"]), properties, str(values["timestamp"]), "perf"))
+                    res.append(Metric(title+"_send_interface", str(values["indexValue"]), properties, str(values["timestamp"]), "esight_if"))
         else:
             logging.info(f"{interface_name} has sent a mesage with no sending rate metrics")
         
@@ -63,9 +63,9 @@ def translate (line: str) -> list:
 
                 if change_timestamp:
                     time.sleep(2)
-                    res.append(Metric(title+"_receive_interface", str(values["indexValue"]), properties, str(int(time.time())),"perf"))
+                    res.append(Metric(title+"_receive_interface", str(values["indexValue"]), properties, str(int(time.time())),"esight_if"))
                 else:
-                    res.append(Metric(title+"_receive_interface", str(values["indexValue"]), properties, str(values["timestamp"]),"perf"))
+                    res.append(Metric(title+"_receive_interface", str(values["indexValue"]), properties, str(values["timestamp"]),"esight_if"))
         else:
             logging.info(f"{interface_name} has sent a mesage with no receiving rate metrics")
 

@@ -1,13 +1,15 @@
 from orwell import Metric, Runner
 import json
 import time
+import logging
+
 # we added this flag because we were having an error with Prometheus
 # change this flag if you want to keep the original timestamps
 change_timestamp = True
 def translate (line: str) -> list:
     line = json.loads(line)
     res = []
-    print(line)
+    logging.info("Received a new message")
     title="esight_slots"
     for key in line.keys():
         interface_name = key
@@ -23,9 +25,9 @@ def translate (line: str) -> list:
                 for values in cpu_usage["indexValues"]:
                     if change_timestamp:
                         time.sleep(2)
-                        res.append(Metric(title+"_cpu_usage", str(values["indexValue"]), properties, str(int(time.time())),"perf"))
+                        res.append(Metric(title+"_cpu_usage", str(values["indexValue"]), properties, str(int(time.time())),"esight_slots"))
                     else:
-                        res.append(Metric(title+"_send_interface", str(values["indexValue"]), properties, str(values["timestamp"]),"perf"))
+                        res.append(Metric(title+"_send_interface", str(values["indexValue"]), properties, str(values["timestamp"]),"esight_slots"))
             for x in line[interface_name]["mem_usage"]["resultData"]:
                 mem_usage=x
                 mem_name=mem_usage["indexName"]
@@ -34,13 +36,15 @@ def translate (line: str) -> list:
                 properties={ "interface_name": interface_name, "units":mem_units, "cpu_name":mem_name,"cpu_display_key":mem_display_key}
                 for values in mem_usage["indexValues"]:
                     if change_timestamp:
-                        res.append(Metric(title+"_mem_usage", str(values["indexValue"]), properties, str(int(time.time())),"perf"))
+                        time.sleep(2)
+                        res.append(Metric(title+"_mem_usage", str(values["indexValue"]), properties, str(int(time.time())),"esight_slots"))
                     else:
-                        res.append(Metric(title+"_send_interface", str(values["indexValue"]), properties, str(values["timestamp"]),"perf"))
+                        res.append(Metric(title+"_send_interface", str(values["indexValue"]), properties, str(values["timestamp"]),"esight_slots"))
         except:
-            print("NO DATA")
+            logging.info("NO DATA")
             continue
     return res
 
+logging.basicConfig(format='[%(levelname)s] - %(asctime)s -> %(message)s', level=logging.INFO, datefmt='%d-%m-%Y %H:%M:%S')
 translator = Runner(translate)
 translator.run()
