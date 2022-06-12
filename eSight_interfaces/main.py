@@ -27,12 +27,11 @@ def translate (line: str) -> list:
             send_interface_user_friendly_name = send_data["neName"]
             send_index_units = send_data["indexUnit"]
 
-            properties = {"interface_name": interface_name, "units": send_index_units, "interface_user_friendly_name": send_interface_user_friendly_name}
+            properties = {"interface_name": interface_name, "units": "Kbps", "interface_user_friendly_name": send_interface_user_friendly_name}
             for values in send_data["indexValues"]:
 
                 if send_index_units == "Mbps":
                     # convert value from Mbps to Kbps
-                    send_index_units = "Kbps" 
                     values["indexValue"] = float(values["indexValue"]) * 1000
 
                 if change_timestamp:
@@ -55,11 +54,10 @@ def translate (line: str) -> list:
             receive_interface_user_friendly_name = receive_data["neName"]
             receive_index_units = receive_data["indexUnit"]
 
-            properties={"interface_name": interface_name, "units": receive_index_units, "interface_user_friendly_name": receive_interface_user_friendly_name}
+            properties={"interface_name": interface_name, "units": "Kbps", "interface_user_friendly_name": receive_interface_user_friendly_name}
             for values in receive_data["indexValues"]:
                 if receive_index_units == "Mbps":
                     # convert value from Mbps to Kbps
-                    receive_index_units="Kbps" 
                     values["indexValue"]=float(values["indexValue"]) * 1000
 
                 if change_timestamp:
