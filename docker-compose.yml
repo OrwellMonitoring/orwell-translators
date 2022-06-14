@@ -22,7 +22,7 @@ services:
     build: 
       context: ./node_exporter
     environment:
-      KAFKA_TOPIC: node_exporter
+      KAFKA_TOPIC: prometheus
 
   telegraf:
     extends: gnocchi
