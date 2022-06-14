@@ -1,47 +1,53 @@
 version: "3.0"
 services:
   gnocchi:
-    build: "./gnochi"
-    environment:
-      KAFKA_TOPIC: "gnocchi"
-      KAFKA_HOST: "10.0.12.82"
-      REDIS_HOST: "10.0.12.82"
-  netdata:
-    build: "./netdata"
-    environment:
-      KAFKA_TOPIC: "netdata"
-      KAFKA_HOST: "10.0.12.82"
-      REDIS_HOST: "10.0.12.82"
-  prometheus:
-    build: "./node_exporter"
-    environment:
-      KAFKA_TOPIC: "prometheus"
-      KAFKA_HOST: "10.0.12.82"
-      REDIS_HOST: "10.0.12.82"
-    restart: always
-  telegraf:
-    build: "./telegraf"
-    environment:
-      KAFKA_TOPIC: "telegraf"
-      KAFKA_HOST: "10.0.12.82"
-      REDIS_HOST: "10.0.12.82"
-  esight_if:
-    build: "./eSight_interfaces"
-    environment:
-      KAFKA_TOPIC: "esight_interface"
-      KAFKA_HOST: "10.0.12.82"
-      REDIS_HOST: "10.0.12.82"
-  esight_slots:
-    build: "./eSight_routers"
-    environment:
-      KAFKA_TOPIC: "esight_slot"
-      KAFKA_HOST: "10.0.12.82"
-      REDIS_HOST: "10.0.12.82"
-  perfsonar:
     build: 
-      context: ./perfsonar
+      context: ./gnochi
       dockerfile: ../Dockerfile
     env_file:
       - .env
     environment:
-      KAFKA_TOPIC: "perf" 
+      KAFKA_TOPIC: gnocchi
+    restart: always
+
+  netdata:
+    extends: gnocchi
+    build: 
+      context: ./netdata
+    environment:
+      KAFKA_TOPIC: netdata
+
+  prometheus:
+    extends: gnocchi
+    build: 
+      context: ./node_exporter
+    environment:
+      KAFKA_TOPIC: node_exporter
+
+  telegraf:
+    extends: gnocchi
+    build: 
+      context: ./telegraf
+    environment:
+      KAFKA_TOPIC: telegraf
+      
+  esight_if:
+    extends: gnocchi
+    build: 
+      context: ./eSight_interfaces
+    environment:
+      KAFKA_TOPIC: esight_interface
+      
+  esight_slots:
+    extends: gnocchi
+    build: 
+      context: ./eSight_routers
+    environment:
+      KAFKA_TOPIC: esight_slot
+
+  perfsonar:
+    extends: gnocchi
+    build: 
+      context: ./perfsonar
+    environment:
+      KAFKA_TOPIC: perf
